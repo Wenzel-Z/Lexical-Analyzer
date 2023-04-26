@@ -1,0 +1,7 @@
+input(a)
+input(b)
+input(c)
+total = a + b + c  /* get a sum of three inputs */
+average = total / 3  /* compute an average */
+output(total)
+output(average)
