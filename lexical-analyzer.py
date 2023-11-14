@@ -1,3 +1,5 @@
+import sys
+
 charClass = 0
 lexeme = 'a'
 nextChar = 'a'
@@ -32,13 +34,14 @@ WHILE_CODE = 36
 FOR_CODE = 37
 COMMENT = 38
 
-# Change the input file here
-in_fp = open("test", "r")
-txtdata = in_fp.read()
-N = len(txtdata)
+N = 0
 
-
-def main():
+def main(file):
+    global N
+    in_fp = open(file, "r")
+    txtdata = in_fp.read()
+    N = len(txtdata)
+    
     if in_fp is None:
         print("Cannot open file")
     else:
@@ -239,4 +242,8 @@ def lex():
 
 
 if __name__ == "__main__":
-    main()
+    input_file = sys.argv[1]
+    if input_file:
+        main(input_file)
+    else:
+        print("please enter a file name")
